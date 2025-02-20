@@ -1,0 +1,188 @@
+.study-tools-container {
+  padding: 40px 20px;
+  max-width: 100%;
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(145deg, #1a1a1a, #232323);
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.study-tools-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.study-tools-header h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: white;
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, #fff, #a5a5a5);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-top: 80px;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+}
+
+.search-bar {
+  display: flex;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+.search-input {
+  flex: 1;
+  padding: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.tool-card {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 2rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.tool-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.tool-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #007bff;
+}
+
+.tool-name {
+  font-size: 1.5rem;
+  color: #007bff;
+  margin-bottom: 0.5rem;
+}
+
+.tool-description {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+
+.features-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.feature-tag {
+  background: rgba(0, 123, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 123, 255, 0.3);
+}
+
+.explore-btn {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.explore-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+.quick-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin: 3rem auto;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-card h4 {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+@media (max-width: 768px) {
+  .study-tools-container {
+    padding: 20px 10px;
+  }
+  
+  .tools-grid {
+    padding: 10px;
+    gap: 20px;
+  }
+
+  .study-tools-header h1 {
+    font-size: 2rem;
+    padding-top: 60px;
+    margin-bottom: 30px;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+
+  .quick-stats {
+    padding: 0 20px;
+  }
+}

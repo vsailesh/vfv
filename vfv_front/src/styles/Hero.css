@@ -1,0 +1,263 @@
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a1a1a, #2a1f1d);
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+}
+
+/* Loading State */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a1a, #2a1f1d);
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #FFF;
+  border-bottom-color: #FFD700;
+  border-radius: 50%;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Particles Background */
+.particles-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at center, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: particleFloat 20s infinite linear;
+  z-index: 1;
+}
+
+/* Animated Title */
+.animate-title {
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: #f8f8f8;
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.animate-title span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s forwards;
+  animation-delay: calc(var(--char-index) * 0.1s);
+}
+
+.animate-title .space {
+  width: 1rem;
+}
+
+/* Scroll Image */
+.scroll-container {
+  position: relative;
+  width: min(300px, 90%);
+  margin: 2rem auto;
+}
+
+.scroll-image {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 10px rgba(255,215,0,0.3));
+  transition: transform 0.3s ease;
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Get Started Button */
+.get-started-btn {
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  margin: 2rem 0;
+}
+
+.get-started-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Description */
+.description {
+  max-width: 800px;
+  margin: 2rem auto;
+  color: #fff;
+  line-height: 1.6;
+}
+
+.highlight {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-weight: bold;
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  opacity: 0.9;
+}
+
+/* App Buttons */
+.app-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.app-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.app-btn:hover {
+  transform: translateY(-5px);
+  background: rgba(255,255,255,0.2);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.store-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.btn-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.small-text {
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+.large-text {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes particleFloat {
+  from { background-position: 0 0; }
+  to { background-position: 50px 50px; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 1rem;
+  }
+  
+  .app-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .app-btn {
+    width: 100%;
+    max-width: 200px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 1rem 0.5rem;
+  }
+  
+  .description {
+    padding: 0 1rem;
+  }
+}
+
+/* Improved accessibility */
+.get-started-btn:focus,
+.app-btn:focus {
+  outline: 2px solid #FFD700;
+  outline-offset: 2px;
+}
+
+/* Fallback styles for when images fail to load */
+.scroll-container:empty {
+  display: none;
+}
+
+/* Improved button states */
+.get-started-btn:active {
+  transform: translateY(1px);
+}
+
+/* Better mobile experience */
+@media (hover: none) {
+  .get-started-btn:hover {
+    transform: none;
+  }
+  
+  .app-btn:hover {
+    transform: none;
+  }
+}
